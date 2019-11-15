@@ -1,6 +1,6 @@
 {
     "name": "anilist-p2w-script",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Get the Anilist of two people compare them and save the unique Animes to fill them into youre own P2W List.",
     "main": "start.js",
     "scripts": {
