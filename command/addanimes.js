@@ -2,7 +2,7 @@ const request = require("request");
 const datalist = require("../data/addanime.js");
 const fs = require("fs");
 let variables;
-let token = process.env.SECRET; //The Code you get from gettoken.js. (Remove {})
+let token = "{youretoken}"; //The Code you get from gettoken.js. (Remove {})
 let counter = 20; //The Number of Animes that should be added. (Don´t go over 90 per Minute)
 let values;
 
