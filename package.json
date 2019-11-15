@@ -1,23 +1,23 @@
 {
-    "name": "anilist-p2w-script",
-    "version": "1.0",
-    "description": "Get the Anilist of two people compare them and save the unique Animes to fill them into youre own P2W List.",
-    "main": "start.js",
-    "scripts": {
-      "start": "node start.js"
-    },
-    "dependencies": {
-      "express": "^4.16.4",
-      "node-fetch": "^2.6.0",
-      "request": "^2.88.0"
-    },
-    "engines": {
-      "node": "8.x"
-    },
-    "license": "MIT",
-    "keywords": [
-      "node",
-      "glitch",
-      "express"
-    ]
-  }
+  "name": "anilist-p2w-script",
+  "version": "1.0.0",
+  "description": "Get the Anilist of two people compare them and save the unique Animes to fill them into youre own P2W List.",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

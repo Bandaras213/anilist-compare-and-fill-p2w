@@ -2,12 +2,20 @@ const request = require("request");
 const datalist = require("../data/addanime.js");
 const fs = require("fs");
 let variables;
-let token = "{user_auth_code}"; //The Code you get from gettoken.js. (Remove {})
+let token = process.env.SECRET; //The Code you get from gettoken.js. (Remove {})
 let counter = 20; //The Number of Animes that should be added. (Don´t go over 90 per Minute)
 let values;
 
-fs.readFile("./cached/uniqueids.js", function(data) {
-    values = JSON.parse(data);
+fs.readFile("./cached/uniqueids.js", function(err, data) {
+  if (err) {
+    console.log(err);
+  }
+
+  values = JSON.parse(data);
+
+  if (values.length < counter) {
+    counter = values.length;
+  };
 
   for (let b = 0; b < counter; b++) {
     variables = {
@@ -39,11 +47,15 @@ fs.readFile("./cached/uniqueids.js", function(data) {
       }
     });
   }
-  fs.writeFile("./cached/uniqueids.js", JSON.stringify(values.splice(counter)), function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Output saved to cached/uniqueids.js.");
+  fs.writeFile(
+    "./cached/uniqueids.js",
+    JSON.stringify(values.splice(counter)),
+    function(err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Output saved to cached/uniqueids.js.");
+      }
     }
-  });
+  );
 });
