@@ -12,10 +12,20 @@ fs.readFile("./cached/uniqueids.js", function(err, data) {
   }
 
   values = JSON.parse(data);
-
-  if (values.length < counter) {
+  
+  if (isNaN(process.argv[2]) == true) {
+    if (values.length < counter) {
     counter = values.length;
-  };
+  }
+  } else {
+    if (values.length < process.argv[2]) {
+    counter = values.length;
+  } else {
+    counter = process.argv[2];
+  }
+  }
+
+
 
   for (let b = 0; b < counter; b++) {
     variables = {

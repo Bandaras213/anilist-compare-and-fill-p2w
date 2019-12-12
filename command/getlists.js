@@ -82,7 +82,7 @@ let user2 = process.argv[3];
     if (err) {
       console.log(err);
     } else {
-      console.log("Output saved to /cached/uniqueids.js.");
+      console.log("Saved " + array3.length + " IDs to /cached/uniqueids.js.");
     }
   });
 })();
